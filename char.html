@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Notation Validator</title>
+</head>
+<body>
+    <h1>Scientific Notation Validator</h1>
+    <p>Enter a number in scientific notation (e.g., 1.23e10 or 4.56E-3)</p>
+    <input type="text" id="numberInput" placeholder="Enter a scientific number">
+    <button onclick="validateScientificNotation()">Validate</button>
+    <p id="result"></p>
+
+    <script>
+        function validateScientificNotation() {
+            var input = document.getElementById('numberInput').value;
+            // Regex to match scientific notation
+            var scientificRegex = /^[+-]?[0-9]\.?[0-9]*[eE][+-]?[0-9]+$/;
+
+            if (scientificRegex.test(input)) {
+                document.getElementById('result').innerHTML = "Valid scientific notation!";
+                document.getElementById('result').style.color = "green";
+            } else {
+                document.getElementById('result').innerHTML = "Invalid scientific notation. Please try again.";
+                document.getElementById('result').style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
